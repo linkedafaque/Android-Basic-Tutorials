@@ -11,6 +11,7 @@ import android.widget.TextView;
 public class FragmentB extends Fragment {
 
     TextView textView;
+    String data;
 
     @Nullable
     @Override
@@ -22,9 +23,24 @@ public class FragmentB extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         textView = (TextView) getActivity().findViewById(R.id.textView);
+
+        //Everytime the UI is created, check if there was something saved earlier.
+        //If yes, restore it to the textbox after screen rotation
+        if(savedInstanceState != null) {
+            data = savedInstanceState.getString("data");
+            textView.setText(data);
+        }
     }
 
     public void changeText(String data) {
         textView.setText(data);
+        this.data = data;
+    }
+
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putString("data", data);
     }
 }
