@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">ListViewInFragment</string>
+
+    <string-array name="titles">
+        <item>Activities</item>
+        <item>Services</item>
+        <item>Content Providers</item>
+        <item>Intent Filters</item>
+    </string-array>
+
+    <string-array name="descriptions">
+        <item>This is description 1</item>
+        <item>This is description 2</item>
+        <item>This is description 3</item>
+        <item>This is description 4</item>
+    </string-array>
+</resources>
